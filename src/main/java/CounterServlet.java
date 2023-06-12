@@ -15,9 +15,7 @@ public class CounterServlet extends HttpServlet {
         res.setContentType("text/html");
         PrintWriter out = res.getWriter();
 
-
         String resetCount = req.getParameter("reset");
-
 
         if(resetCount != null) {
             counter = 0;
