@@ -1,12 +1,8 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: ramirez
-  Date: 6/13/23
-  Time: 12:40 PM
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<nav>
-    This is My Navbar
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">Navbar</span>
+    </div>
 </nav>

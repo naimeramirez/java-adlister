@@ -1,11 +1,18 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: ramirez
-  Date: 6/13/23
-  Time: 12:36 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%--<%--%>
+<%--    if(request.getMethod().equalsIgnoreCase("post")) {--%>
+<%--        String inputUsername = request.getParameter("inputUsername");--%>
+<%--        String inputPassword = request.getParameter("inputPassword");--%>
+
+<%--        if (inputUsername.equals("admin") && inputPassword.equals("password")) {--%>
+<%--            response.sendRedirect("profile.jsp");--%>
+<%--        }--%>
+<%--    }--%>
+<%--%>--%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,17 +22,21 @@
 <body>
 <%@ include file="partials/navbar.jsp" %>
 
-<form>
+<form method="POST" action="login.jsp">
     <div class="container-sm">
-    <div class="mb-3">
-        <label for="inputLogin" class="form-label">Login</label>
-        <input type="text" class="form-control" id="inputLogin">
-    </div>
-    <div class="mb-3">
-        <label for="inputPassword" class="form-label">Password</label>
-        <input type="password" class="form-control" id="inputPassword">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="mb-3">
+            <label for="inputUsername" class="form-label">Username</label>
+            <input type="text" class="form-control" id="inputUsername" name="inputUsername" value="admin">
+        </div>
+        <div class="mb-3">
+            <label for="inputPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="inputPassword" name="inputPassword" value="password">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <c:if test="${param.inputUsername.equals('admin') && param.inputPassword.equals('password')}">
+            <% response.sendRedirect("profile.jsp"); %>
+<%--            <meta http-equiv="refresh" content="0; url='http://localhost:8080/profile.jsp'">--%>
+        </c:if>
     </div>
 </form>
 
