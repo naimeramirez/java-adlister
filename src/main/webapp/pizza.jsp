@@ -12,14 +12,59 @@
 
 <form method="POST" action="pizza.jsp">
   <div class="container-sm">
-    <div class="mb-3">
-      <label for="inputUsername" class="form-label">Username</label>
-      <input type="text" class="form-control" id="inputUsername" name="inputUsername" value="admin">
+
+    <select class="form-select" aria-label="crust">
+      <option selected>Crust</option>
+      <option value="thin">Thin</option>
+      <option value="original">Original</option>
+      <option value="pan">Pan</option>
+    </select>
+
+    <select class="form-select" aria-label="sauce">
+      <option selected>Sauce</option>
+      <option value="marinara">Marinara Sauce</option>
+      <option value="alfredo">Alfredo Sauce</option>
+      <option value="bbq">BBQ Sauce</option>
+    </select>
+
+    <select class="form-select" aria-label="size">
+      <option selected>Size</option>
+      <option value="small">Small</option>
+      <option value="medium">Medium</option>
+      <option value="large">Large</option>
+    </select>
+
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="pepperoni" id="pepperoni">
+      <label class="form-check-label" for="pepperoni">
+        Pepperoni
+      </label>
     </div>
-    <div class="mb-3">
-      <label for="inputPassword" class="form-label">Password</label>
-      <input type="password" class="form-control" id="inputPassword" name="inputPassword" value="password">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="sausage" id="sausage">
+      <label class="form-check-label" for="sausage">
+        Sausage
+      </label>
     </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="bacon" id="bacon">
+      <label class="form-check-label" for="bacon">
+        Bacon
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="mushrooms" id="mushrooms">
+      <label class="form-check-label" for="mushrooms">
+        Mushrooms
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="pineapple" id="pineapple">
+      <label class="form-check-label" for="pineapple">
+        Pineapple
+      </label>
+    </div>
+
     <button type="submit" class="btn btn-primary">Submit</button>
   </div>
 </form>

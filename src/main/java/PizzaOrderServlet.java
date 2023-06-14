@@ -7,6 +7,8 @@ import javax.servlet.annotation.WebServlet;
 @WebServlet(name = "PizzaOrderServlet", urlPatterns = "/pizza-order")
 public class PizzaOrderServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.getWriter().println("<h1>Pizza Order Form</h1>");
+        request.getRequestDispatcher("/pizza.jsp").forward(request, response);
     }
+
+
 }
