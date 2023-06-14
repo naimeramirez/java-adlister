@@ -6,13 +6,8 @@
 <head>
     <title>View Color</title>
     <%@ include file="partials/head.jsp" %>
-    <style>
-        body {
-            background-color: <%= request.getParameter("color") %>;
-        }
-    </style>
 </head>
-<body>
+<body style="background-color: <%= request.getParameter("color") %>">
 <%@ include file="partials/navbar.jsp" %>
 
 
