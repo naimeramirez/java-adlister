@@ -14,19 +14,20 @@ public class PizzaOrderServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        String crust = request.getParameter(("crust"));
-        String sauce = request.getParameter(("sauce"));
-        String size = request.getParameter(("size"));
-        String[] toppings = request.getParameterValues("toppings");
-        String address = request.getParameter(("address"));
+        if (request.getMethod().equals("POST")) {
+            String crust = request.getParameter(("crust"));
+            String sauce = request.getParameter(("sauce"));
+            String size = request.getParameter(("size"));
+            String[] toppings = request.getParameterValues("toppings");
+            String address = request.getParameter(("address"));
 
-        System.out.println("address: " + address);
-        System.out.println("crust: " + crust);
-        System.out.println("sauce: " + sauce);
-        System.out.println("size: " + size);
-        System.out.println("toppings: " + Arrays.toString(toppings));
+            System.out.println("address: " + address);
+            System.out.println("crust: " + crust);
+            System.out.println("sauce: " + sauce);
+            System.out.println("size: " + size);
+            System.out.println("toppings: " + Arrays.toString(toppings));
 
-
-        request.getRequestDispatcher("pizza.jsp").forward(request, response);
+            request.getRequestDispatcher("pizza.jsp").forward(request, response);
+        }
     }
 }

@@ -10,7 +10,7 @@
 <body>
 <%@ include file="partials/navbar.jsp" %>
 
-<form method="POST" action="pizza.jsp">
+<form method="POST" action="${pageContext.request.contextPath}/pizza-order">
   <div class="container-sm">
 
     <select class="form-select" name="crust">
