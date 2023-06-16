@@ -1,12 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <jsp:include page="partials/head.jsp">
-        <jsp:param name="title" value="Your Profile" />
-    </jsp:include>
+    <title>Profile</title>
+    <%@ include file="/partials/head.jsp" %>
 </head>
 <body>
-    <jsp:include page="partials/navbar.jsp" />
+<%@ include file="/partials/navbar.jsp" %>
 
     <div class="container">
         <h1>Viewing your profile.</h1>

@@ -1,21 +1,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
-    if (request.getMethod().equalsIgnoreCase("post")) {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        if (username.equals("admin") && password.equals("password")) {
-            response.sendRedirect("/profile");
-        }
-    }
+
 %>
 <html>
 <head>
-    <jsp:include page="partials/head.jsp">
-        <jsp:param name="title" value="Please Log In" />
-    </jsp:include>
+    <title>Login</title>
+    <%@ include file="/partials/head.jsp" %>
 </head>
 <body>
-    <jsp:include page="partials/navbar.jsp" />
+<%@ include file="/partials/navbar.jsp" %>
     <div class="container">
         <h1>Please Log In</h1>
         <form action="/login.jsp" method="POST">
