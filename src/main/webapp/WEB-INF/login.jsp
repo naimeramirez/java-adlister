@@ -1,22 +1,21 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <jsp:include page="partials/head.jsp">
-        <jsp:param name="title" value="Please Log In" />
-    </jsp:include>
+    <title>Login</title>
+    <%@ include file="/partials/head.jsp" %>
 </head>
 <body>
-    <jsp:include page="partials/navbar.jsp" />
+<%@ include file="/partials/navbar.jsp" %>
     <div class="container">
         <h1>Please Log In</h1>
-        <form action="/login" method="POST">
+        <form method="POST" action="${pageContext.request.contextPath}/login">
             <div class="form-group">
                 <label for="username">Username</label>
-                <input id="username" name="username" class="form-control" type="text">
+                <input id="username" name="username" class="form-control" type="text" value="admin">
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input id="password" name="password" class="form-control" type="password">
+                <input id="password" name="password" class="form-control" type="password" value="password">
             </div>
             <input type="submit" class="btn btn-primary btn-block" value="Log In">
         </form>

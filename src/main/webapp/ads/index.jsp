@@ -2,22 +2,28 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <jsp:include page="/partials/head.jsp">
-        <jsp:param name="title" value="Viewing All The Ads" />
-    </jsp:include>
+    <title>Ads</title>
+    <%@ include file="../partials/head.jsp" %>
 </head>
 <body>
-<jsp:include page="/partials/navbar.jsp" />
+<%@ include file="../partials/navbar.jsp" %>
 
-<div class="container">
+<div class="container-fluid d-flex justify-content-center">
     <h1>Here Are all the ads!</h1>
+</div>
 
-    <c:forEach var="ad" items="${ads}">
-        <div class="col-md-6">
-            <h2>${ad.title}</h2>
-            <p>${ad.description}</p>
-        </div>
-    </c:forEach>
+
+<div class="container-fluid d-flex justify-content-center">
+    <div class="row d-flex justify-content-center">
+        <c:forEach items="${ads}" var="ad">
+            <div class="card m-1" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">${ad.title}</h5>
+                    <p class="card-text">${ad.description}</p>
+                </div>
+            </div>
+        </c:forEach>
+    </div>
 </div>
 
 </body>
