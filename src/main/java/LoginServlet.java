@@ -6,12 +6,20 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(name = "LoginServlet", urlPatterns = "/login")
+@WebServlet("/login")
 public class LoginServlet extends HttpServlet {
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("../WEB-INF/login.jsp").forward(request, response);
+        HttpSession session = request.getSession();
+        String isLoggedIn = (String) session.getAttribute("user");
+        if (isLoggedIn != null) {
+            response.sendRedirect("/profile");
+            return;
+        }
+        request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
     }
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
@@ -19,7 +27,7 @@ public class LoginServlet extends HttpServlet {
 
         if (validAttempt) {
             HttpSession session = request.getSession();
-            session.setAttribute("username", username);
+            session.setAttribute("user", username);
             response.sendRedirect("/profile");
         } else {
             response.sendRedirect("/login");

@@ -8,8 +8,9 @@
 <body>
     <%@ include file="../partials/navbar.jsp" %>
 
-    <div class="container-fluid d-flex justify-content-center">
+    <div class="container-fluid">
         <h1>Viewing your profile.</h1>
+        <h1>Welcome ${isLoggedIn}</h1>
     </div>
 
 </body>
