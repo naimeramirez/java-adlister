@@ -2,12 +2,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Viewing All The Ads" />
-    </jsp:include>
+    <title>Viewing All The Ads</title>
+    <%@ include file="../partials/head.jsp" %>
 </head>
 <body>
-<jsp:include page="/WEB-INF/partials/navbar.jsp" />
+<%@ include file="../partials/navbar.jsp" %>
 
 <div class="container">
     <h1>Here Are all the ads!</h1>
