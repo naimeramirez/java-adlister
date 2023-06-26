@@ -31,8 +31,7 @@ public class LoginServlet extends HttpServlet {
             return;
         }
 
-        boolean check = Password.hash(password);
-        boolean validAttempt = check;
+        boolean validAttempt = Password.check(password, user.getPassword());
 
         if (validAttempt) {
             request.getSession().setAttribute("user", user);
