@@ -13,5 +13,3 @@ public class Password {
         return BCrypt.checkpw(password, hash);
     }
 }
-
-//
